@@ -2,12 +2,17 @@ import java.util.Scanner;
 
 public class Main {
 
-    static Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-    static double MAX_REGULAR_HOURS = 40;
-    static double OVERTIME_FACTOR = 1.5;
+        double MAX_REGULAR_HOURS = 40;
+        double OVERTIME_FACTOR = 1.5;
 
-    public static double calculatePay(double hours, double rate){
+        System.out.println("ENTER HOURS:");
+        double hours = scanner.nextDouble();
+
+        System.out.println("ENTER RATE:");
+        double rate = scanner.nextDouble();
         double regularHours = 0;
         double overtimeHours = 0;
         double overtimeRate = OVERTIME_FACTOR * rate;
@@ -25,17 +30,7 @@ public class Main {
         System.out.printf("overtime rate: %s \n", overtimeRate);
         System.out.printf("regular total: %s \n", regularTimeTotal);
         System.out.printf("overtime total: %s \n", overtimeTotal);
-        return total;
-    }
 
-    public static void main(String[] args) {
-
-        System.out.println("ENTER HOURS:");
-        double hours = scanner.nextDouble();
-
-        System.out.println("ENTER RATE:");
-        double rate = scanner.nextDouble();
-
-        System.out.printf("TOTAL: %.2f \n", calculatePay(hours, rate));
+        System.out.printf("TOTAL: %.2f \n", total);
     }
 }
